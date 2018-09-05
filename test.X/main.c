@@ -55,13 +55,13 @@ int main(int argc, char** argv) {
         }
         else
         {
-            if (count&0x10 && count&0x08 && count&0x04 && count&0x02 && count&0x01)
+            if (count&0x1F)
             {
-                PORTD   = 0x01;
+                PORTD   = 0x00;
             }
             else
             {
-                PORTD   = 0x00;
+                PORTD   = 0x01;
             }
         }
     }
