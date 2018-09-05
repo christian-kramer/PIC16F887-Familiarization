@@ -18,21 +18,21 @@
 int main(int argc, char** argv) {
 
     //ANSEL   = 0;
-    ANSELH  = 0x2F;
-    TRISA   = 0x01;
-    TRISB   = 0x01;
-    TRISD   = 0x00;
-    ADCON0  = 0x01;
-    ADCON1  = 0x0E;
+    ANSELH  = 0x2F;     // Analog/Digital, --101111
+    TRISA   = 0x01;     // I/O
+    TRISB   = 0x01;     // I/O
+    TRISD   = 0x00;     // I/O
+    ADCON0  = 0x01;     // clock select, channel select, go, on
+    //ADCON1  = 0x00;   // right or left justified, negative and positive reference voltages
     
     
-    TMR0    = 0;
-    T0CS    = 0;
-    T0SE    = 0;
-    PSA     = 0;
-    PS0     = 1;
-    PS1     = 1;
-    PS2     = 1;
+    TMR0    = 0;        // instantiate timer at 0
+    T0CS    = 0;        // select either internal or external source
+    T0SE    = 0;        // XOR bit for T0CKI pin
+    PSA     = 0;        // watchdog timer or previous selection
+    PS0     = 1;        // selection for prescaler
+    PS1     = 1;        // selection for prescaler
+    PS2     = 1;        // selection for prescaler
     
     int count;
     
