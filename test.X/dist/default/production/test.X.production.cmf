@@ -11,13 +11,13 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\flyhi\AppData\Local\Temp\s4cs.o
+$C:\Users\flyhi\AppData\Local\Temp\snes.o
 end_init CODE 0 0 0 3 2
 config CONFIG 0 2007 2007 1 2
 $dist/default/production\test.X.production.o
 cinit CODE 0 7FC 7FC 4 2
-maintext CODE 0 7D7 7D7 25 2
-cstackCOMMON COMMON 1 70 70 4 1
+maintext CODE 0 7A2 7A2 5A 2
+cstackCOMMON COMMON 1 70 70 6 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -32,24 +32,24 @@ BANK0 20-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 3-7D6 2
+CONST 3-7A1 2
 CONST 800-1FFF 2
-ENTRY 3-7D6 2
+ENTRY 3-7A1 2
 ENTRY 800-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
-CODE 3-7D6 2
+CODE 3-7A1 2
 CODE 800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
-COMMON 74-7D 1
+COMMON 76-7D 1
 CONFIG 2008-2008 2
 EEDATA 2100-21FF 2
-STRCODE 3-7D6 2
+STRCODE 3-7A1 2
 STRCODE 800-1FFF 2
-STRING 3-7D6 2
+STRING 3-7A1 2
 STRING 800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -65,28 +65,47 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\test.X.production.o
-7FC cinit CODE >434:C:\Users\flyhi\AppData\Local\Temp\s4cs.
-7FC cinit CODE >437:C:\Users\flyhi\AppData\Local\Temp\s4cs.
-7FC cinit CODE >443:C:\Users\flyhi\AppData\Local\Temp\s4cs.
-7FC cinit CODE >445:C:\Users\flyhi\AppData\Local\Temp\s4cs.
-7FD cinit CODE >446:C:\Users\flyhi\AppData\Local\Temp\s4cs.
-7D7 maintext CODE >18:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7D7 maintext CODE >21:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7DB maintext CODE >22:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7DF maintext CODE >23:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7E1 maintext CODE >24:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7E2 maintext CODE >25:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7E6 maintext CODE >26:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7EA maintext CODE >28:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7EA maintext CODE >29:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7F1 maintext CODE >31:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7F2 maintext CODE >33:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7F4 maintext CODE >34:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7F5 maintext CODE >35:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7F5 maintext CODE >37:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7F7 maintext CODE >38:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7F8 maintext CODE >39:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
-7F9 maintext CODE >43:C:\Users\flyhi\MPLABXProjects\test.X\newmain.c
+7FC cinit CODE >450:C:\Users\flyhi\AppData\Local\Temp\snes.
+7FC cinit CODE >453:C:\Users\flyhi\AppData\Local\Temp\snes.
+7FC cinit CODE >459:C:\Users\flyhi\AppData\Local\Temp\snes.
+7FC cinit CODE >461:C:\Users\flyhi\AppData\Local\Temp\snes.
+7FD cinit CODE >462:C:\Users\flyhi\AppData\Local\Temp\snes.
+7A2 maintext CODE >18:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7A2 maintext CODE >21:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7A6 maintext CODE >22:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7AA maintext CODE >23:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7AC maintext CODE >24:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7AD maintext CODE >25:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7B1 maintext CODE >26:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7B5 maintext CODE >29:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7B8 maintext CODE >30:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7BB maintext CODE >31:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7BC maintext CODE >32:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7BD maintext CODE >33:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7BE maintext CODE >34:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7BF maintext CODE >35:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7C1 maintext CODE >39:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7C1 maintext CODE >40:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7C5 maintext CODE >42:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7CB maintext CODE >43:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7CD maintext CODE >44:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7CD maintext CODE >45:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7D3 maintext CODE >47:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7D6 maintext CODE >48:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7D6 maintext CODE >50:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7DD maintext CODE >52:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7DE maintext CODE >54:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7E0 maintext CODE >55:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7E1 maintext CODE >56:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7E1 maintext CODE >58:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7F1 maintext CODE >60:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7F3 maintext CODE >61:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7F4 maintext CODE >62:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7F4 maintext CODE >64:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7F6 maintext CODE >65:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7F7 maintext CODE >66:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7F8 maintext CODE >67:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
+7F9 maintext CODE >71:L:\Documents\GitHub\PIC16F887-Familiarization\test.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -101,24 +120,28 @@ $dist/default/production\test.X.production.o
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\test.X.production.o
 __Hspace_0 2008 0 ABS 0 - -
-__Hspace_1 74 0 ABS 0 - -
+__Hspace_1 76 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\test.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\flyhi\AppData\Local\Temp\s4cs.o
-_main FAE 0 CODE 0 maintext dist/default/production\test.X.production.o
+_T0CS 40D 0 ABS 0 - dist/default/production\test.X.production.o
+_T0IF 5A 0 ABS 0 - dist/default/production\test.X.production.o
+_T0SE 40C 0 ABS 0 - dist/default/production\test.X.production.o
+_TMR0 1 0 ABS 0 - dist/default/production\test.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\flyhi\AppData\Local\Temp\snes.o
+_main F44 0 CODE 0 maintext dist/default/production\test.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\test.X.production.o
-start 0 0 CODE 0 init C:\Users\flyhi\AppData\Local\Temp\s4cs.o
+start 0 0 CODE 0 init C:\Users\flyhi\AppData\Local\Temp\snes.o
 __size_of_main 0 0 ABS 0 - dist/default/production\test.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\flyhi\AppData\Local\Temp\s4cs.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\flyhi\AppData\Local\Temp\s4cs.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\flyhi\AppData\Local\Temp\s4cs.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\flyhi\AppData\Local\Temp\s4cs.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\flyhi\AppData\Local\Temp\s4cs.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\flyhi\AppData\Local\Temp\s4cs.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\flyhi\AppData\Local\Temp\snes.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\flyhi\AppData\Local\Temp\snes.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\flyhi\AppData\Local\Temp\snes.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\flyhi\AppData\Local\Temp\snes.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\flyhi\AppData\Local\Temp\snes.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\flyhi\AppData\Local\Temp\snes.o
 wtemp0 7E 0 ABS 0 - dist/default/production\test.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
@@ -128,7 +151,7 @@ _ADRESH 1E 0 ABS 0 - dist/default/production\test.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\test.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 start_initialization FF8 0 CODE 0 cinit dist/default/production\test.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\flyhi\AppData\Local\Temp\s4cs.o
+___int_sp 0 0 STACK 2 stack C:\Users\flyhi\AppData\Local\Temp\snes.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -163,19 +186,24 @@ __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_PS0 408 0 ABS 0 - dist/default/production\test.X.production.o
+_PS1 409 0 ABS 0 - dist/default/production\test.X.production.o
+_PS2 40A 0 ABS 0 - dist/default/production\test.X.production.o
+_PSA 40B 0 ABS 0 - dist/default/production\test.X.production.o
 __S0 2008 0 ABS 0 - -
-__S1 74 0 ABS 0 - -
+__S1 76 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\test.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\flyhi\AppData\Local\Temp\s4cs.o
-__pmaintext FAE 0 CODE 0 maintext dist/default/production\test.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\flyhi\AppData\Local\Temp\snes.o
+__pmaintext F44 0 CODE 0 maintext dist/default/production\test.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\test.X.production.o
-stackhi 0 0 ABS 0 - C:\Users\flyhi\AppData\Local\Temp\s4cs.o
-stacklo 0 0 ABS 0 - C:\Users\flyhi\AppData\Local\Temp\s4cs.o
+main@count 74 0 COMMON 1 cstackCOMMON dist/default/production\test.X.production.o
+stackhi 0 0 ABS 0 - C:\Users\flyhi\AppData\Local\Temp\snes.o
+stacklo 0 0 ABS 0 - C:\Users\flyhi\AppData\Local\Temp\snes.o
 _ADCON0bits 1F 0 ABS 0 - dist/default/production\test.X.production.o
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\test.X.production.o
 __Lspace_0 0 0 ABS 0 - -
@@ -231,7 +259,7 @@ __initialization FF8 0 CODE 0 cinit dist/default/production\test.X.production.o
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7FC FF8 4 2
-maintext 0 7D7 FAE 25 2
-cstackCOMMON 1 70 70 4 1
+maintext 0 7A2 F44 5A 2
+cstackCOMMON 1 70 70 6 1
 reset_vec 0 0 0 3 2
 config 0 2007 400E 1 2

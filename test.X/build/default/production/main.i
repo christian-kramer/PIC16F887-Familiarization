@@ -1,4 +1,4 @@
-# 1 "newmain.c"
+# 1 "main.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "newmain.c" 2
+# 1 "main.c" 2
 
 
 
@@ -112,7 +112,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 9 "newmain.c" 2
+# 9 "main.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdlib.h" 1 3
 
@@ -210,7 +210,7 @@ extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
-# 10 "newmain.c" 2
+# 10 "main.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 3
@@ -2691,7 +2691,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 11 "newmain.c" 2
+# 11 "main.c" 2
 
 #pragma config FOSC=INTRC_NOCLKOUT, WDTE=OFF, MCLRE=ON, LVP=OFF
 
@@ -2702,14 +2702,35 @@ extern __bank0 __bit __timeout;
 int main(int argc, char** argv) {
 
 
-    ANSELH = 0x04;
-    TRISB = 0x01;
+    ANSELH = 0x2F;
     TRISA = 0x01;
+    TRISB = 0x01;
     TRISD = 0x00;
     ADCON0 = 0x01;
     ADCON1 = 0x0E;
 
+
+    TMR0 = 0;
+    T0CS = 0;
+    T0SE = 0;
+    PSA = 0;
+    PS0 = 1;
+    PS1 = 1;
+    PS2 = 1;
+
+    int count;
+
     while (1) {
+        if (T0IF)
+        {
+            count++;
+            T0IF = 0;
+        }
+        if (count == 256)
+        {
+            count = 0;
+        }
+
         if (~PORTB&1)
         {
             ADCON0bits.GO = 1;
@@ -2718,7 +2739,14 @@ int main(int argc, char** argv) {
         }
         else
         {
-            PORTD = 0x00;
+            if (count&0x08 && count&0x04 && count&0x02 && count&0x01)
+            {
+                PORTD = 0x01;
+            }
+            else
+            {
+                PORTD = 0x00;
+            }
         }
     }
 
