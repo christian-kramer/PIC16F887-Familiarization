@@ -9,8 +9,8 @@ I picked up a PICkit 2 for free the other day, and wanted to figure out how to u
 
 ---
 
-## Blink
+## Light Sensor Prototype
 
-The PIC16F887 is packed incredibly full of features, and I've only begun to scratch the surface of what it can do. I set my sights on learning how to use the hardware timers next.
+I've been working on getting my light sensor project ready for production, and part of that was choosing the PIC10F220 as the minimum microprocessor needed for the application. Unfortunately, in addition to minimal peripherals, it also has minimal Flash and SRAM... 375 bytes and 16 bytes, respectively. Fitting reliable decision-making for whether or not the photoresistor is detecting a shadow will be a challenge.
 
-The program as it stood was pretty boring for the "off" state; all of the LEDs just stay off until you press the button. I wanted to indicate that it was waiting for user input with a blinking light to make things more interesting. I had played around with using the native XC8 "__delay_ms()" function to control the blinking, but that introduced lag when the button was pushed. I thought that offloading the timing onto an onboard timer would allow for blinking to occur without disturbing the program flow, and introducing unnecessary lag. After some tinkering, a 1/8 pulse is now generated every 2 seconds, and the switch between "off" and displaying the potentiometer value is instantaneous. I will attempt to make use of more hardware features in the future.
+The system I devised is simple: the microcontroller would record the light level when it first boots up, and then compare the most recent level with that initial reading. Essentially, if the new level is higher than the old level, the "score" variable is incremented by 1. If the new level is lower than the old level, the "score" variable is decrementedf by 1. This repeats X times at which point the microcontroller decides it's "sure" that the photoresistor is, in fact, experiencing darkness/light and not just random noise... at which point it switches the array of LEDs connected to PORTD on or off accordingly. The number of times can be increased to increase the reliability of the program, at the cost of responsiveness. Future experimentation and modification is likely, but will take place on my prototype hardware as this works well on my PIC16F887 demo board.
