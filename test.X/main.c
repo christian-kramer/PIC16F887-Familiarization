@@ -16,7 +16,7 @@
  * 
  */
 
-unsigned int getLightValue()
+char getLightValue()
 {
     ADCON0bits.GO = 1;
     return ~ADRESH;
@@ -47,11 +47,11 @@ void main() {
     TRISD	= 0x00;
     ADCON0  = 0x05;
     
-    unsigned int startValue = getLightValue();
-    unsigned int count = 0;
+    char startValue = getLightValue();
+    char count = 0;
     
     while (1) {
-        unsigned int currentValue = getLightValue();
+        char currentValue = getLightValue();
         if (currentValue > startValue + 5 && count < 100)
         {
             count++;
